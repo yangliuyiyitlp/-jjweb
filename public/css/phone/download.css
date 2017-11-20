@@ -1,0 +1,124 @@
+.banner{
+	position: relative;
+	width: 100%;
+	padding-bottom: 22%;
+}
+.banner img{
+	display: block;
+	width: 100%;
+}
+.banner p{
+	position: absolute;
+}
+.touming{
+    width: 33.3%;
+    top: 3%;
+    left: 33.35%;
+}
+.theme{
+    width: 48%;
+    left: 26%;
+    top: 12%;
+    color: white;
+    font-size: 12px;
+    text-align: center;
+}
+.apple{
+    width: 25%;
+    top: 17%;
+    left: 37.5%;
+}
+.apple img{
+    display: inline-block;
+    margin-left: 22%;
+    width: 16%;
+}
+.apple .android{
+    margin-left: 25%;
+}
+.downNow{
+	width: 25%;
+    left: 36%;
+    text-align: center;
+    top: 23%;
+    background: white;
+    padding: 5px 8px;
+    border-radius: 12px;
+    font-size: 14px;
+}
+.iphone{
+	top: 32%;
+    left: 22.6%;
+    width: 54.8%;
+}
+.introduce{
+	width: 86.7%;
+	margin: 32px auto;
+}
+.introduce p{
+	margin-bottom: 10px;
+	color: #494949;
+	font-size: 14px;
+}
+.introduce .redTitle{
+	background: #df0007;
+	color: white;
+	padding: 7px 0;
+	text-align: center;
+	width: 25%;
+}
+.introduce .redTitle1{
+	background: #df0007;
+	color: white;
+	padding: 7px 0;
+	text-align: center;
+	width: 32%;
+}
+h1{
+	padding: 25px 0;
+	text-align: center;
+	font-size: 22px;
+	font-weight: bold;
+	color: black;
+}
+.useGuide{
+	width: 100%;
+	position: relative;
+}
+.useGuide img{
+	width: 100%;
+	display: block;
+}
+.guideDetail1,.guideDetail2,.guideDetail3,.guideDetail4{
+	position: absolute;
+	font-size:12px ;
+	color: #494949;
+}
+.special{
+	font-size: 14px;
+	color: black;
+	font-weight: bold;
+}
+.special span{
+	color: #e7181a;
+	font-size: 16px;
+	padding: 0 2px;
+}
+.guideDetail1{
+    top: 5%;
+    left: 28%;
+}
+.guideDetail2{
+    top: 32%;
+    right: 22%;
+    text-align: right;
+}
+.guideDetail3{
+    top: 60%;
+    left: 28%;
+}
+.guideDetail4{
+    top: 88%;
+    right: 22%;
+    text-align: right;
+}

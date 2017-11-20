@@ -1,0 +1,200 @@
+p {
+	text-indent: 22px;
+	padding: 5px 8px;
+}
+
+html, body, .mui-content {
+	background-color: #fff;
+}
+
+h4 {
+	margin-left: 5px;
+}
+
+.mui-plus header.mui-bar {
+	display: none;
+}
+
+.mui-plus .mui-bar-nav ~.mui-content {
+	padding: 0;
+}
+
+.stationView {
+	width: 100%;
+	height: 100%- 50px;
+	position: absolute;
+	top: 50px
+}
+
+.bar {
+	padding: 10px 10px;
+	height: 50px;
+	width: 100%;
+	background-color: #BABABA;
+}
+
+.staitonCell {
+	/*background: lightyellow;*/
+	position: relative;
+	height: 70px;
+	margin: 0px 20px;
+	padding: 10px 10px;
+}
+
+.left {
+	width: 65%;
+}
+
+.top {
+	background-color: #50A3F2;
+	width: 100%;
+	height: 50%;
+	position: relative;
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+	line-height: 25px;
+}
+
+.down {
+	background-color: white;
+	width: 100%;
+	height: 50%;
+	position: relative;
+	border: 2px solid #50A3F2;
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+
+.middle {
+	width: 4%;
+}
+
+.right {
+	width: 31%;
+}
+
+.cellStyle {
+	height: 100%;
+	position: relative;
+	float: left;
+}
+
+.middle-line {
+	background-color: #50A3F2;
+	height: 4px;
+	width: 100%;
+	position: absolute;
+	top: 50%;
+}
+
+.tip {
+	height: 60%;
+	width: 100%;
+	position: absolute;
+	top: 20%;
+	border-radius: 5px;
+	border: 2px solid #50A3F2;
+}
+
+.locate {
+	background-color: #50A3F2;
+	width: 35%;
+	height: 100%;
+	border-top-left-radius: 3px;
+	border-bottom-left-radius: 3px;
+	position: relative;
+	float: left;
+	text-align: center;
+}
+
+.distance {
+	background-color: white;
+	width: 65%;
+	height: 100%;
+	border-top-right-radius: 5px;
+	border-bottom-right-radius: 5px;
+	position: relative;
+	float: left;
+	text-align: center;
+	font-size: 12px;
+	line-height: 26px;
+}
+
+.stationName {
+	color: white;
+	height: 50%;
+	width: 100%;
+	top: 20%;
+}
+
+.imgview1 {
+	height: 100%;
+	width: 47%;
+	position: absolute;
+	left: 3%;
+	float: left;
+}
+
+.imgview1-img {
+	height: 20px;
+	width: 30px;
+	position: absolute;
+	float: left;
+}
+
+.imgview1-label {
+	height: 20px;
+	width: 75%;
+	position: absolute;
+	float: left;
+	left: 35px;
+	font-size: 13px;
+}
+
+.imgview2 {
+	height: 100%;
+	width: 47%;
+	position: absolute;
+	left: 50%;
+	float: left;
+}
+
+.imgview2-img {
+	height: 22px;
+	width: 18px;
+	position: absolute;
+	float: left;
+}
+
+.imgview2-label {
+	height: 20px;
+	width: 75%;
+	position: absolute;
+	float: left;
+	left: 23px;
+	font-size: 13px;
+}
+
+.listBtn {
+	background-color: #50A3F2;
+	float: left;
+	color: white;
+	margin-left: 5%;
+	width: 45%;
+	border: 0px;
+	border-radius:3px 0px  0px 3px;
+}
+
+.mapBtn {
+	background-color: white;
+	float: left;
+	width: 45%;
+	border: 0px;
+	border-radius: 0px 3px 3px 0px ;
+}
+
+.mapContainer {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+}

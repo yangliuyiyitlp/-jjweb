@@ -1,0 +1,121 @@
+html,
+body,
+.mui-content{
+    width: 100%;
+    height: 100%;
+}
+.download-bg {
+    width: 100%;
+    background-image: url(../img/download-bg.png);
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    /*margin-bottom: 50px;*/
+    overflow: hidden;
+}
+.mui-bar-tab{
+    background-image: url(../img/nav-bg.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    height: 50px;
+}
+.download-button{
+    background-image: url(../img/download-button.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 60%;
+    display: block;
+    height: 30px;
+    margin-left: 20%;
+    margin-top: 10px;
+    border-radius: 10px;
+}
+.download-button:active
+{
+    opacity:0.9;/*其他，透明度50%*/
+}
+.weibo{
+    width:31%;
+    margin-left: 11%;
+    margin-right: 15%;
+    margin-top: 148%;
+}
+.wechat{
+    width:31%;
+    margin-right: 10%;
+}
+.invitationCode-bg{
+    /*background-image: url(images/invitationCode-bg.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;*/
+    background-color: rgb(239,239,239);
+    width: 100%;
+    margin-top: 55%;
+    padding-left: 50%;
+    padding-top: 5%;
+    display: none;
+}
+.invitationCode-bg-bak{
+    width: 100%;
+    margin-top: 55%;
+    display: none;
+}
+.invitationCode{
+    margin-left: -100px;
+}
+.invitationCode{
+    font-size: 20px;
+    color: rgb(57,57,57);
+}
+/*.ios-button{
+    background-color: #000000;
+    position: absolute;
+    top:65%;
+    left: 15%;
+    height: 50px;
+    width: 70%;
+}*/
+.webUrl{
+    margin-top: 25%;
+    margin-left: 10%;
+    font-size: 15px;
+}
+.webUrl a{
+    color: #000000;
+}
+.mail{
+    display: block;
+    margin-top: 3%;
+    margin-left: 10%;
+    font-size: 15px;
+}
+.mail a{
+    color: #000000;
+}
+.wxtip {
+    background: rgba(0, 0, 0, 0.8);
+    text-align: center;
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 998;
+    display: none;
+}
+
+.wxtip-icon {
+    width: 52px;
+    height: 67px;
+    background: url(../img/weixin-tip.png) no-repeat;
+    display: block;
+    position: absolute;
+    right: 20px;
+    top: 20px;
+}
+
+.wxtip-txt {
+    margin-top: 107px;
+    color: #fff;
+    font-size: 16px;
+    line-height: 1.5;
+}
