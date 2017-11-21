@@ -1,15 +1,20 @@
 const express = require('express')
 const router = express.Router()
 const axios = require('axios')
-const baseUrl = 'http://172.16.20.213:8081'
+const baseUrl = require('../public/js/baseUrl-test.json')
 
-router.get('/:num/:size', async (req, res, next) => {
+function getAgentID (req) {
+  let deviceAgent = req.headers['user-agent'].toLowerCase()    // 判断打开网页的终端
+  let agentId = deviceAgent.match(/(iphone|ipod|ipad|android)/)
+  return agentId
+}
+router.get('/list/:num/:size', async (req, res, next) => {
   let pageSize = req.params.size   // 获取占位符参数
   let pageNum = req.params.num
-  let deviceAgent = req.headers['user-agent'].toLowerCase()    // 判断打开网页的终端
-  let agentID = deviceAgent.match(/(iphone|ipod|ipad|android)/)
+  let agentID = getAgentID(req)
   try {
-    let r1Promise = axios.get(baseUrl + '/cms/article/getarticleall', {timeout: 2000}) // 获取新闻列表
+    console.log(baseUrl)
+    let r1Promise = axios.get(baseUrl.newsUrl + '/cms/article/getarticleall', {timeout: 2000}) // 获取新闻列表
     let r1 = await r1Promise
     console.log(r1.data)
     if (!agentID) {
@@ -40,10 +45,9 @@ router.get('/:num/:size', async (req, res, next) => {
 
 router.get('/detail/:id', async (req, res, next) => {
   let id = req.params.id   // 获取占位符参数
-  let deviceAgent = req.headers['user-agent'].toLowerCase()    // 判断打开网页的终端
-  let agentID = deviceAgent.match(/(iphone|ipod|ipad|android)/)
+  let agentID = getAgentID(req)
   try {
-    let r1Promise = axios.get(baseUrl + '/cms/article/echo_article/' + id, {timeout: 2000})  // 获取文章内容
+    let r1Promise = axios.get(baseUrl.newsUrl + '/cms/article/echo_article/' + id, {timeout: 2000})  // 获取文章内容
     let r1 = await r1Promise
     console.log(r1.data.data.content)
     if (!agentID) {

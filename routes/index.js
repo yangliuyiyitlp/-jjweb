@@ -1,13 +1,14 @@
 const express = require('express')
 const router = express.Router()
 
-/* GET home page. */
+function getAgentID (req) {
+  let deviceAgent = req.headers['user-agent'].toLowerCase()    // 判断打开网页的终端
+  let agentId = deviceAgent.match(/(iphone|ipod|ipad|android)/)
+  return agentId
+}
 router.get('/', function (req, res, next) {
   // TODO: 判断用户UA，如果是手机用户，跳转到m.99bicycle.com
-  // function1()
-  // function2()
-  var deviceAgent = req.headers['user-agent'].toLowerCase()
-  var agentID = deviceAgent.match(/(iphone|ipod|ipad|android)/)
+  let agentID = getAgentID(req)
   if (agentID) {
     res.render('phoneHome', {title: '赳赳单车', layout: 'phoneLayout'})
   } else {
@@ -24,8 +25,7 @@ router.get('/brandStory', function (req, res, next) {
 })
 
 router.get('/aboutUs', function (req, res, next) {
-  var deviceAgent = req.headers['user-agent'].toLowerCase()
-  var agentID = deviceAgent.match(/(iphone|ipod|ipad|android)/)
+  let agentID = getAgentID(req)
   if (agentID) {
     res.render('phoneAboutus', {title: '关于赳赳', layout: 'phoneLayout'})
   } else {
