@@ -5,5 +5,5 @@ const router = express.Router()
 router.get('/download', function (req, res, next) {
   res.render('download', {title: '赳赳单车'})
 })
-
+router
 module.exports = router
