@@ -1,0 +1,48 @@
+#content{
+    width:35%;
+    margin:85px auto 85px;
+}
+.errorImg{
+    width:100%;
+}
+.errorImg img{
+    width:100%;
+    display: block;
+}
+.txt{
+    text-align: center;
+    font-size: 20px;
+    margin:35px 0;
+}
+#content div{
+    width:100%;
+}
+.toHome{
+    width:50%!important;
+    float: left;
+    text-align: center;
+    cursor:hand;
+    cursor:pointer;
+}
+.toHome img{
+    height:26px;
+    vertical-align: bottom;
+}
+.refresh{
+    width:50%!important;
+    float: right;
+    text-align: center;
+    cursor:hand;
+    cursor:pointer;
+}
+.refresh img{
+    height:26px;
+    vertical-align: bottom;
+}
+.operation{
+    height: 32px;
+    font-size: 17px;
+}
+.operation span{
+    padding-left:12px;
+}

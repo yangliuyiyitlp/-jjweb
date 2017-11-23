@@ -1,0 +1,29 @@
+#newsContent{
+    width:85%;
+    margin:0 auto;
+}
+.newsTietle{
+    font-size: 19px;
+    margin: 5% 0;
+}
+.newsDetail{
+    font-size:12px;
+    color: #959595;
+}
+.newsDetail span{
+    padding-right:2px;
+}
+.newsDetail span:first-child{
+    color:#df0007
+}
+.newsContent{
+    font-size: 14px;
+    color: #5e5e5e;
+    line-height: 21px;
+    margin: 5% 0;
+}
+.newsImg img{
+    width:100%;
+    display: block;
+    border-radius:10px;
+}

@@ -24,12 +24,12 @@ router.get('/brandStory', function (req, res, next) {
   res.render('brandStory', {title: '赳赳故事'})
 })
 
-router.get('/aboutUs', function (req, res, next) {
+router.get('/aboutus', function (req, res, next) {
   let agentID = getAgentID(req)
   if (agentID) {
     res.render('phoneAboutus', {title: '关于赳赳', layout: 'phoneLayout'})
   } else {
-    res.render('aboutUs', {title: '关于赳赳'})
+    res.render('aboutus', {title: '关于赳赳'})
   }
 })
 router.get('/download', function (req, res, next) {
@@ -39,6 +39,6 @@ router.get('/phoneDownload', function (req, res, next) {
   res.render('phoneDownload', {title: '下载APP', layout: 'phoneLayout'})
 })
 router.get('/phoneNews', function (req, res, next) {
-  res.render('phoneNews', {title: '赳赳新闻', layout: 'phoneLayout'})
+  res.render('phoneNewsdetail', {title: '赳赳新闻', layout: 'phoneLayout'})
 })
 module.exports = router
