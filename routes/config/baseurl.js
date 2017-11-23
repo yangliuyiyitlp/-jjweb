@@ -1,7 +1,7 @@
-let baseurl
-if (process.env === 'PRODUCTION') {
+let baseurl = {base: 'jjjj'}
+if (process.env.NODE_ENV === 'PRODUCTION') {
   baseurl = require('./baseUrl-prod.json')
-} else if (process.env === 'TEST') {
+} else if (process.env.NODE_ENV === 'TEST') {
   baseurl = require('./baseUrl-test.json')
 } else {
   baseurl = require('./baseUrl-dev.json')
