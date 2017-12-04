@@ -35,23 +35,18 @@ router.get('/list/:num/:size', async (req, res, next) => {
     console.log(baseUrl)
     let r1Promise = axios.get(`${baseUrl.newsUrl}/cms/article/getarticleall`, {timeout: 10000}) // 获取新闻列表
     let r1 = await r1Promise
-    console.log(r1.data)
+    console.log(r1.data.data.result[0])
     if (r1.data.code !== 200) {
       errorOpration(req, res, r1.data.code)
     } else {
-      let contentStr = ''
-      for (let i = 1; i < r1.data.data.result.length; i++) {
+      for (let i = 0; i < r1.data.data.result.length; i++) {
         let unixTimestamp = new Date(r1.data.data.result[i].updateDate)
-        let commonTime = unixTimestamp.toLocaleString()
-        contentStr = contentStr + '<div class="article1"><p class="atitle">' + r1.data.data.result[i].title + '</p>' +
-          '<p class="adetail">作者：<span>' + r1.data.data.result[i].createBy + '</span>来源：<span>' + r1.data.data.result[i].copyfrom + '</span>发布时间：<span>' + commonTime + '</span></p>' +
-          '<p class="acontent">' + r1.data.data.result[i].createBy + '</p>' +
-          '<a class="areadmore" href="/news/detail/' + r1.data.data.result[i].id + '">阅读原文→</a></div>'
+        r1.data.data.result[i].tranTime = unixTimestamp.toLocaleString()
       }
       if (!agentID) {
-        res.render('news', {title: '赳赳新闻', content: contentStr})
+        res.render('news', {title: '赳赳新闻', list: r1.data.data.result, error: ''})
       } else {
-        res.render('phoneNews', {title: '赳赳新闻', content: contentStr, layout: 'phoneLayout'})
+        res.render('phoneNews', {title: '赳赳新闻', list: r1.data.data.result, error: '', layout: 'phoneLayout'})
       }
     }
   } catch (err) {
@@ -76,13 +71,10 @@ router.get('/detail/:id', async (req, res, next) => {
     } else {
       let unixTimestamp = new Date(r1.data.data.updateDate)
       let commonTime = unixTimestamp.toLocaleString()
-      let articleDetail = '<p class="newsTietle">' + r1.data.data.title + '</p>' +
-        '<p class="newsDetail">作者：<span>' + r1.data.data.createBy + '</span>来源：<span>' + r1.data.data.copyfrom + '</span>发布时间：<span>' + commonTime + '</span></p>' +
-        r1.data.data.content
       if (!agentID) {
-        res.render('newsDetail', {title: '赳赳新闻', r1: articleDetail})
+        res.render('newsDetail', {title: '赳赳新闻', atctitle: r1.data.data.title, createBy: r1.data.data.createBy, copyfrom: r1.data.data.copyfrom, commonTime: commonTime, atccontent: r1.data.data.content})
       } else {
-        res.render('phoneNewsdetail', {title: '赳赳新闻', layout: 'phoneLayout', r1: articleDetail})
+        res.render('phoneNewsdetail', {title: '赳赳新闻', layout: 'phoneLayout', atctitle: r1.data.data.title, createBy: r1.data.data.createBy, copyfrom: r1.data.data.copyfrom, commonTime: commonTime, atccontent: r1.data.data.content})
       }
     }
   } catch (err) {

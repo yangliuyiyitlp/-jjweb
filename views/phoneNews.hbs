@@ -1,17 +1,1 @@
-<!doctype html>
-<html>
-<head>
-    <link rel="stylesheet" type="text/css" href="/css/phone/news.css" />
-</head>
-<body>
-<div id="content">
-    <div class="banner"> <img src="/img/phone/newsBanner.png" alt="" />
-        <p>终身免费共享单车的创始者，</p>
-        <p class="bottomP">还原共享单车该有的模样。</p>
-    </div>
-    <div class="article">
-        {{{content}}}
-    </div>
-</div>
-</body>
-</html>
+<!doctype html><html><head><link rel="stylesheet" type="text/css" href="/css/phone/news.css"/></head><body><div id="content"><div class="banner"><img src="/img/phone/newsBanner.png" alt=""/><p>            终身免费共享单车的创始者，</p><p class="bottomP">            还原共享单车该有的模样。</p></div><div class="article">        {{#if list}}<ul id="list">                {{#each list}}<div class="article1" onclick="window.location.href='/news/detail/{{this.id}}'"><p class="atitle">{{this.title}}</p><p class="adetail">作者：<span>{{this.createBy}}</span>来源：<span>{{this.copyfrom}}</span>发布时间：<span>{{this.tranTime}}</span></p><p class="acontent">{{this.description}}</p><a class="areadmore" href="/news/detail/{{this.id}}">阅读原文→</a></div>                {{/each}}</ul>        {{else}}<p>{{error}}</p>        {{/if}}</div></div></body></html>

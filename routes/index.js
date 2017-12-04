@@ -23,7 +23,9 @@ router.get('/tech', function (req, res, next) {
 router.get('/brandStory', function (req, res, next) {
   res.render('brandStory', {title: '赳赳故事'})
 })
-
+router.get('/rechargeAggrement', function (req, res, next) {
+  res.render('rechargeAggrement', {layout: false})
+})
 router.get('/aboutus', function (req, res, next) {
   let agentID = getAgentID(req)
   if (agentID) {

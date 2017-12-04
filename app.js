@@ -34,9 +34,13 @@ app.use('/news', news)
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
-  let err = new Error('Not Found')
-  err.status = 404
-  next(err)
+  let deviceAgent = req.headers['user-agent'].toLowerCase()    // 判断打开网页的终端
+  let agentId = deviceAgent.match(/(iphone|ipod|ipad|android)/)
+  if (!agentId) {
+    res.render('404', {title: '网络错误'})
+  } else {
+    res.render('phone404', {title: '网络错误', layout: 'phoneLayout'})
+  }
 })
 
 // error handler
