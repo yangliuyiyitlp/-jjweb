@@ -6,6 +6,7 @@ function getAgentID (req) {
   let agentId = deviceAgent.match(/(iphone|ipod|ipad|android)/)
   return agentId
 }
+
 router.get('/', function (req, res, next) {
   // TODO: 判断用户UA，如果是手机用户，跳转到m.99bicycle.com
   let agentID = getAgentID(req)
@@ -36,6 +37,9 @@ router.get('/aboutus', function (req, res, next) {
 })
 router.get('/download', function (req, res, next) {
   res.render('download', {title: '下载APP', layout: false})
+})
+router.get('/wxDownload', function (req, res, next) {
+  res.render('wxDownload', {title: '下载APP', layout: false})
 })
 router.get('/phoneDownload', function (req, res, next) {
   res.render('phoneDownload', {title: '下载APP', layout: 'phoneLayout'})

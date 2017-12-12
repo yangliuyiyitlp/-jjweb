@@ -5,5 +5,7 @@ const router = express.Router()
 router.get('/download', function (req, res, next) {
   res.render('download', {title: '赳赳单车'})
 })
-router
+router.get('/wxDownload', function (req, res, next) {
+  res.render('wxDownload', {title: '赳赳单车'})
+})
 module.exports = router
