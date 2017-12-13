@@ -7,8 +7,11 @@ function getAgentID (req) {
   return agentId
 }
 
+router.head('/', function (req, res, next) {
+  res.send()
+})
+
 router.get('/', function (req, res, next) {
-  // TODO: 判断用户UA，如果是手机用户，跳转到m.99bicycle.com
   let agentID = getAgentID(req)
   if (agentID) {
     res.render('phoneHome', {title: '赳赳单车', layout: 'phoneLayout'})
