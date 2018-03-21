@@ -1,0 +1,94 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>赳赳单车新用户3天免押免费骑，点击一键领取！</title>
+    <meta name="viewport"
+          content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+    <link href="/css/mui.min.css" rel="stylesheet"/>
+    <style>
+        img{
+            display: block;
+            width: 100%;
+        }
+        body{
+            background: #fff;
+            padding-bottom: 60px;
+        }
+        .fixed{
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+            z-index: 997;
+            padding-top: 20px;
+            background: #fff
+        }
+        .wxtip {
+            background: rgba(0, 0, 0, 0.8);
+            text-align: center;
+            position: fixed;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 998;
+            display: none
+        }
+
+        .wxtip-icon {
+            width: 52px;
+            height: 67px;
+            background: url(../img/weixin-tip.png) no-repeat;
+            display: block;
+            position: absolute;
+            right: 20px;
+            top: 20px
+        }
+
+        .wxtip-txt {
+            margin-top: 107px;
+            color: #fff;
+            font-size: 16px;
+            line-height: 1.5
+        }
+        .mui-bar-tab~.mui-content {
+            padding: 0;
+        }
+    </style>
+</head>
+<body>
+<div class="mui-bar mui-bar-tab"><a id="download-button" class="download-button"></a></div>
+<div class="mui-content">
+    <div>
+        <img src="/img/active_img1.jpg" alt="">
+        <img src="/img/active_img2.jpg" alt="">
+        <img src="/img/active_img3.jpg" alt="">
+    </div>
+    <div class="fixed" id="fixed">
+        <img src="/img/active_img4.jpg" alt="">
+    </div>
+</div>
+<div class="wxtip" id="JweixinTip"><span class="wxtip-icon"></span>
+    <p class="wxtip-txt"> 点击右上角<br/>分享领取优惠</p></div>
+<script src="/js/mui.min.js"></script>
+<script src="/js/baiduDownload.js" async></script>
+<script>
+    var downloadButton = document.getElementById("fixed");
+	downloadButton.addEventListener("tap", function(event) {
+		var u = navigator.userAgent;
+		var isAndroid = u.indexOf("Android") > -1 || u.indexOf("Adr") > -1;
+		var isiOS = !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/);
+		var isWeixin = !!/MicroMessenger/i.test(u);
+		var isAlipay = !!/Alipay/i.test(u);
+		if(isWeixin || isAlipay) {
+            document.getElementById("JweixinTip").style.display = "block";
+            return
+        }
+	});
+	document.getElementById("JweixinTip").addEventListener("tap", function(event) {
+		this.style.display = "none"
+	});
+</script>
+</body>
+</html>

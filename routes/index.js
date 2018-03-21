@@ -50,4 +50,7 @@ router.get('/phoneDownload', function (req, res, next) {
 router.get('/phoneNews', function (req, res, next) {
   res.render('phoneNewsdetail', {title: '赳赳新闻', layout: 'phoneLayout'})
 })
+router.get('/wxApp', function (req, res, next) {
+  res.render('wxApp', {title: '赳赳单车新用户3天免押免费骑，点击一键领取！', layout: false})
+})
 module.exports = router
